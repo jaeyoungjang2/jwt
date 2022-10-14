@@ -1,7 +1,7 @@
 package com.study.jwt.controller;
 
 import com.study.jwt.account.dto.LoginReqDto;
-import com.study.jwt.dto.AccountReqDto;
+import com.study.jwt.account.dto.AccountReqDto;
 
 import com.study.jwt.dto.GlobalResDto;
 import com.study.jwt.jwt.util.JwtUtil;

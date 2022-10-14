@@ -1,6 +1,6 @@
 package com.study.jwt.account.entity;
 
-import com.study.jwt.dto.AccountReqDto;
+import com.study.jwt.account.dto.AccountReqDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -7,7 +7,7 @@ POST http://localhost:8080/api/account/login
 Content-Type: application/json
 
 {
-  "email": "wonbin@mail.com",
+  "email": "jay@mail.com",
   "password": "bin1234"
 }
 
@@ -16,8 +16,8 @@ POST http://localhost:8080/api/account/signup
 Content-Type: application/json
 
 {
-  "email": "wonbin@mail.com",
-  "password": "bin1234",
+  "email": "jay@mail.com",
+  "password": "jay1234",
   "phoneNumber": "01033332222"
 }
 ###

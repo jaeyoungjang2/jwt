@@ -28,12 +28,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		// WebSecurityConfig 에서 보았던 UsernamePasswordAuthenticationFilter 보다 먼저 동작을 하게 됩니다.
 
-		// 위, 변조 검증
-		// expired date 확인
-		// 토큰 만들어주고
-		// 토큰에서 값을 가져올 수 있고
-
-
 		// 헤더에서 토큰을 가져옵니다.
 		String accessToken = jwtUtil.getHeaderToken(request, "Access");
 		String refreshToken = jwtUtil.getHeaderToken(request, "Refresh");
@@ -76,5 +70,4 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 			log.error(e.getMessage());
 		}
 	}
-
 }

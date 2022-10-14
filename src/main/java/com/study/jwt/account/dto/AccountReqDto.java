@@ -1,4 +1,4 @@
-package com.study.jwt.dto;
+package com.study.jwt.account.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -4,7 +4,7 @@ import com.study.jwt.account.dto.LoginReqDto;
 import com.study.jwt.account.entity.Account;
 import com.study.jwt.account.entity.RefreshToken;
 import com.study.jwt.account.repository.AccountRepository;
-import com.study.jwt.dto.AccountReqDto;
+import com.study.jwt.account.dto.AccountReqDto;
 import com.study.jwt.dto.GlobalResDto;
 import com.study.jwt.jwt.dto.TokenDto;
 import com.study.jwt.jwt.util.JwtUtil;

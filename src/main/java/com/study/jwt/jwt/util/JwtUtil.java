@@ -96,7 +96,7 @@ public class JwtUtil {
 	// refreshToken 토큰 검증
 	// db에 저장되어 있는 token과 비교
 	// db에 저장한다는 것이 jwt token을 사용한다는 강점을 상쇄시킨다.
-	// redis를 사용하는 것이 더욱 좋다. (in-memory db기 때문에 조회속도가 빠르고 주기적으로 삭제하는 기능이 기본적으로 존재합니다.)
+	// db 보다는 redis를 사용하는 것이 더욱 좋다. (in-memory db기 때문에 조회속도가 빠르고 주기적으로 삭제하는 기능이 기본적으로 존재합니다.)
 	public Boolean refreshTokenValidation(String token) {
 
 		// 1차 토큰 검증
