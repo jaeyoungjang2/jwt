@@ -1,5 +1,6 @@
 package com.study.jwt.account.entity;
 
+import com.study.jwt.dto.AccountReqDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,24 +13,22 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Entity
 @NoArgsConstructor
-public class RefreshToken {
+public class Account {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotBlank
-	private String refreshToken;
+	private String email;
 	@NotBlank
-	private String accountEmail;
+	private String password;
+	@NotBlank
+	private String phoneNumber;
 
-	public RefreshToken(String token, String email) {
-		this.refreshToken = token;
-		this.accountEmail = email;
-	}
-
-	public RefreshToken updateToken(String token) {
-		this.refreshToken = token;
-		return this;
+	public Account(AccountReqDto accountReqDto) {
+		this.email = accountReqDto.getEmail();
+		this.password = accountReqDto.getPassword();
+		this.phoneNumber = accountReqDto.getPhoneNumber();
 	}
 
 }

@@ -1,7 +1,9 @@
 package com.study.jwt.jwt.util;
 
 import com.study.jwt.account.entity.RefreshToken;
+import com.study.jwt.jwt.dto.TokenDto;
 import com.study.jwt.repository.RefreshTokenRepository;
+import com.study.jwt.security.user.UserDetailsServiceImpl;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -109,6 +111,7 @@ public class JwtUtil {
 	// 인증 객체 생성
 	public Authentication createAuthentication(String email) {
 		UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+		// spring security 내에서 가지고 있는 객체입니다. (UsernamePasswordAuthenticationToken)
 		return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
 	}
 

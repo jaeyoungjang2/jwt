@@ -1,0 +1,23 @@
+GET http://localhost:8080/api/issue/token
+Accept: application/json
+Refresh_Token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3b25iaW5AbWFpbC5jb20iLCJleHAiOjE2NjU3MzI5ODMsImlhdCI6MTY2NTczMjkyM30.JLBBkJqyL4ZU50b7BtUpBkqr_zOp32dCPJbEMWKlalo
+
+###
+POST http://localhost:8080/api/account/login
+Content-Type: application/json
+
+{
+  "email": "wonbin@mail.com",
+  "password": "bin1234"
+}
+
+###
+POST http://localhost:8080/api/account/signup
+Content-Type: application/json
+
+{
+  "email": "wonbin@mail.com",
+  "password": "bin1234",
+  "phoneNumber": "01033332222"
+}
+###
