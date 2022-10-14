@@ -1,6 +1,6 @@
-package com.study.jwt.filter;
+package com.study.jwt.jwt.filter;
 
-import com.study.jwt.util.JwtUtil;
+import com.study.jwt.jwt.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +31,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 		// 토큰 만들어주고
 		// 토큰에서 값을 가져올 수 있고
 
+
+		// 헤더에서 토큰을 가져옵니다.
 		String accessToken = jwtUtil.getHeaderToken(request, "Access");
 		String refreshToken = jwtUtil.getHeaderToken(request, "Refresh");
 
