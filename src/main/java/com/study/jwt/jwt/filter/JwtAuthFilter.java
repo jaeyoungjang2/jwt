@@ -52,7 +52,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 		filterChain.doFilter(request,response);
 	}
 
-	public void setAuthentication(String email) {
+	private void setAuthentication(String email) {
 		Authentication authentication = jwtUtil.createAuthentication(email);
 		// security가 만들어주는 securityContextHolder 그 안에 authentication을 넣어줍니다.
 		// security가 securitycontextholder에서 인증 객체를 확인하는데
@@ -60,7 +60,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 	}
 
-	public void jwtExceptionHandler(HttpServletResponse response, String msg, HttpStatus status) {
+	private void jwtExceptionHandler(HttpServletResponse response, String msg, HttpStatus status) {
 		response.setStatus(status.value());
 		response.setContentType("application/json");
 		try {
