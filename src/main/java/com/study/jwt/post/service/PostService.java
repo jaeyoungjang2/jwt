@@ -18,4 +18,12 @@ public class PostService {
 
         return new PostResponseDto(savedPost);
     }
+
+    public PostResponseDto findPost(Long id) {
+        Post post = postRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("게시물을 찾을 수 없습니다.")
+        );
+
+        return new PostResponseDto(post);
+    }
 }
