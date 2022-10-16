@@ -1,4 +1,4 @@
-package com.study.jwt.controller;
+package com.study.jwt.account.controller;
 
 import com.study.jwt.account.dto.LoginReqDto;
 import com.study.jwt.account.dto.AccountReqDto;
@@ -6,7 +6,7 @@ import com.study.jwt.account.dto.AccountReqDto;
 import com.study.jwt.dto.GlobalResDto;
 import com.study.jwt.jwt.util.JwtUtil;
 import com.study.jwt.security.user.UserDetailsImpl;
-import com.study.jwt.service.AccountService;
+import com.study.jwt.account.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

@@ -1,4 +1,4 @@
-package com.study.jwt.service;
+package com.study.jwt.account.service;
 
 import com.study.jwt.account.dto.LoginReqDto;
 import com.study.jwt.account.entity.Account;

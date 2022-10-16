@@ -1,4 +1,4 @@
-package com.study.jwt.controller;
+package com.study.jwt.post.controller;
 
 import com.study.jwt.post.dto.PostRequestDto;
 import com.study.jwt.post.dto.PostResponseDto;
