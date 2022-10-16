@@ -20,7 +20,7 @@ public class Postcontroller {
 
     @GetMapping("/{id}")
     private PostResponseDto findPost(@PathVariable Long id) {
-        postService.findPost(id);
+        return postService.findPost(id);
     }
 
 }
