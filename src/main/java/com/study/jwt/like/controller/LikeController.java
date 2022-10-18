@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/like")
+@RequestMapping("/api")
 public class LikeController {
 
     private final LikeService likeService;
 
-    @PostMapping("")
+    @PostMapping("/like")
     public boolean addLikeOrDeleteLike(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody LikeRequestDto likeRequestDto) {
         Account account = userDetails.getAccount();
         return likeService.addLikeOrDeleteLike(account, likeRequestDto);

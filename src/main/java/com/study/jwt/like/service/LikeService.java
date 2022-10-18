@@ -6,7 +6,7 @@ import com.study.jwt.like.dto.LikeRequestDto;
 import com.study.jwt.like.entity.Like;
 import com.study.jwt.like.repository.LikeRepository;
 import com.study.jwt.post.repository.PostRepository;
-import com.study.jwt.post.service.Post;
+import com.study.jwt.post.entity.Post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +35,5 @@ public class LikeService {
             likeRepository.save(like);
             return true;
         }
-
-
     }
 }

@@ -3,32 +3,33 @@ package com.study.jwt.post.controller;
 import com.study.jwt.post.dto.PostRequestDto;
 import com.study.jwt.post.dto.PostResponseDto;
 import com.study.jwt.post.service.PostService;
+import com.study.jwt.security.user.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/posts")
 public class Postcontroller {
 
     private final PostService postService;
 
     // 게시글 저장
-    @PostMapping("")
-    private PostResponseDto savePost(PostRequestDto postRequestDto) {
+    @PostMapping("/api/posts")
+    private PostResponseDto savePost(@RequestBody PostRequestDto postRequestDto) {
         return postService.savePost(postRequestDto);
     }
 
     // 게시글 단건 조회
-    @GetMapping("/{id}")
-    private PostResponseDto findPost(@PathVariable Long id) {
-        return postService.findPost(id);
+    @GetMapping("/api/posts/{id}")
+    private PostResponseDto findPost(@AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable Long id) {
+        return postService.findPost(userDetails, id);
     }
 
     // 게시글 전체 조회
-    @GetMapping("")
+    @GetMapping("/api/posts")
     private List<PostResponseDto> findAllPost() {
         return postService.findAllPost();
     }

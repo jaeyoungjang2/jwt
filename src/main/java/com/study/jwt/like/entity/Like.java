@@ -1,13 +1,14 @@
 package com.study.jwt.like.entity;
 
 import com.study.jwt.account.entity.Account;
-import com.study.jwt.post.service.Post;
+import com.study.jwt.post.entity.Post;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
+@Table(name = "likes")
 public class Like {
     @Id
     @GeneratedValue
