@@ -24,7 +24,6 @@ public class Post {
     @OneToMany(mappedBy = "post")
     private List<Like> likes;
 
-    @Transient
     private int likeCount;
 
     @Transient

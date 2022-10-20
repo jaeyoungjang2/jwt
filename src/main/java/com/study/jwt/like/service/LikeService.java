@@ -36,6 +36,7 @@ public class LikeService {
         } else {
             Like like = new Like(account, post);
             likeRepository.save(like);
+            System.out.println();
             return true;
         }
     }

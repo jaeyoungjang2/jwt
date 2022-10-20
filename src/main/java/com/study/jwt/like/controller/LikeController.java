@@ -3,6 +3,7 @@ package com.study.jwt.like.controller;
 import com.study.jwt.account.entity.Account;
 import com.study.jwt.like.dto.LikeRequestDto;
 import com.study.jwt.like.service.LikeService;
+import com.study.jwt.like.service.LikeService2;
 import com.study.jwt.security.user.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class LikeController {
 
-    private final LikeService likeService;
+    private final LikeService2 likeService;
 
     @PostMapping("/like")
     public boolean addLikeOrDeleteLike(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody LikeRequestDto likeRequestDto) {

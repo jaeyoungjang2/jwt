@@ -5,6 +5,7 @@ import com.study.jwt.jwt.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
@@ -57,6 +58,7 @@ public class WebSecurityConfig {
 
 
 		http.authorizeRequests().antMatchers("/api/account/**").permitAll()
+				.antMatchers(HttpMethod.GET,"/api/post/").permitAll()
 				.anyRequest().authenticated()
 				.and()
 				// filter와 intercepter의 개념이 있습니다.
