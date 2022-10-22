@@ -35,7 +35,7 @@ public class AccountController {
 
 	// accesstoken이 만료되었을 때 refreshtoken이 발행되는 부분입니다.
 	@GetMapping("/issue/token")
-	public GlobalResDto issuedToken(@AuthenticationPrincipal UserDetailsImpl userDetails, HttpServletResponse response){
+	public GlobalResDto issuedToken(@AuthenticationPrincipal UserDetailsImpl userDetails, HttpServletResponse response, @RequestHeader("ACCESS_TOKEN") String token){
 		response.addHeader(JwtUtil.ACCESS_TOKEN, jwtUtil.createToken(userDetails.getAccount().getEmail(), "Access"));
 		return new GlobalResDto("Success IssuedToken", HttpStatus.OK.value());
 	}
